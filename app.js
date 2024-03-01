@@ -24,7 +24,8 @@ app.use(express.json());
 
 
 app.use(cors({
-        origin:"*"
+        origin:"*",
+        methods:["GET","POST"]
 }))
 app.use(mongoSanitize())
 app.use(helmet())
