@@ -33,16 +33,16 @@ exports.login = (req, res) => {
     // UsersModel.project({ email: email, password: password })
     UsersModel.aggregate([
         { $match: { email: email } },
-        {
-            $project: {
-                email: 1,
-                firstName: 1,
-                photo: 1,
-                mobile: 1,
-                address: 1,
-                role: 1
-            }
-        }
+        // {
+        //     $project: {
+        //         email: 1,
+        //         firstName: 1,
+        //         photo: 1,
+        //         mobile: 1,
+        //         address: 1,
+        //         role: 1
+        //     }
+        // }
     ])
         .then((data) => {
             if (!data) {
@@ -52,7 +52,7 @@ exports.login = (req, res) => {
 
                     let Payload = {
                         exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),
-                        data: data[0].email,
+                        data: data[0]?.email,
 
                     }
 
