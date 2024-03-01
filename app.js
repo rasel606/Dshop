@@ -23,7 +23,11 @@ app.use(express.json());
 
 
 
-app.use(cors())
+app.use(cors(
+    {
+        origin:"https://dshop-124.vercel.app/"
+    }
+))
 app.use(mongoSanitize())
 app.use(helmet())
 app.use(hpp())
