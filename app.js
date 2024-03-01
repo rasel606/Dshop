@@ -25,7 +25,7 @@ app.use(express.json());
 
 app.use(cors(
     {
-        origin:"https://dshop-124.vercel.app/"
+        origin:"http://localhost:3000/"
     }
 ))
 app.use(mongoSanitize())
