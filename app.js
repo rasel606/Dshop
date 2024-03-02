@@ -67,6 +67,10 @@ app.use("/api/v1", router);
 // app.use("*", (req, res) => {
 //     res.status(404).json({ status: "Fail", data: "Data not found" })
 // });
+app.get("/api/v1/cors")=>{
+        res.set("Access-Control-Allow-Origin","*")
+        res.send("CORS ENABEL")
+
 
 
 
